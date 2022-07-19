@@ -6,7 +6,7 @@
 using namespace std;
 
 void reverseArray(int *A, int left, int right, int arraySize) {     // 翻转数组A 中 [left,right) 的数据
-    if (left >= right || right > arraySize) {  // 范围越界结束
+    if (left >= right || right >= arraySize) {  // 范围越界结束
         return ;
     }
     int i = left, j = right - 1;
