@@ -6,7 +6,7 @@
 using namespace std;
 struct SqList{
     int data[100];
-    int maxsize,length;
+    int length;
 }sqList;
 
 void add(vector<int> num) {
@@ -33,6 +33,7 @@ int main() {
 
     // 模拟数据
     add({5,4,1,2,3});
+
 
     cout << "原：";
     for (int i = 0 ; i < sqList.length ; i++) cout << sqList.data[i] << " ";
