@@ -6,7 +6,7 @@
 using namespace std;
 struct SqList{
     int data[100];
-    int maxsize,length;
+    int length;
 }sqList;
 
 void add(vector<int> num) {
@@ -16,22 +16,21 @@ void add(vector<int> num) {
 }
 
 bool delCommonValue(SqList &list) {
-    //ToDo 408考试不允许使用STL, 后期会修改算法
-    unordered_map<int,bool> q;
-    int k = 0;
-    for (int i = 0 ; i < list.length ; i++) {
-        if (!q[list.data[i]]) { // 当前元素未出现过
-            list.data[k++] = list.data[i];
-            q[list.data[i]] = true;    // 标记出现了
-        }
+    if (list.length == 0) return false;
+    int t = list.data[0];
+    int k = 1;
+    for (int i = 1 ; i < list.length ; i++) {
+        while (i < list.length && list.data[i] == t) i++;
+        list.data[k++] = list.data[i];  // 与 t 不同的元素赋值给 第 k 位
+        t = list.data[i];
     }
-    list.length = k;    // 更改长度
+    list.length = k - 1;
 }
 
 int main() {
 
     // 模拟数据
-    add({1,2,3,3,2,5,3});
+    add({1,2,2,3,3,3});
 
     cout << "原：";
     for (int i = 0 ; i < sqList.length ; i++) cout << sqList.data[i] << " ";
