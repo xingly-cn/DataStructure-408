@@ -6,7 +6,7 @@
 using namespace std;
 struct SqList{
     int data[100];
-    int maxsize,length;
+    int length;
 }sqList;
 
 void add(vector<int> num) {
