@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 # 注册文件夹
 add_subdirectory(C2)
+add_subdirectory(C3)
